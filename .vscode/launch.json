@@ -1,0 +1,62 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node-terminal",
+			"presentation": {
+				"hidden": true,
+				"group": "debug",
+				"order": 2
+			},
+			"cascadeTerminateToConfigurations": [
+				"Frontend"
+			],
+			"name": "Backend",
+			"request": "launch",
+			"command": "npm run dev",
+			"sourceMaps": true,
+			"smartStep": true,
+			"skipFiles": [
+				"<node_internals>/**",
+				"${workspaceFolder}/node_modules/**",
+				"${workspaceFolder}/build/**",
+				"${workspaceFolder}/server-build/**",
+			],
+		},
+		{
+			"type": "chrome",
+			"presentation": {
+				"hidden": true,
+				"group": "debug",
+				"order": 3
+			},
+			"cascadeTerminateToConfigurations": [
+				"Backend"
+			],
+			"name": "Frontend",
+			"request": "launch",
+			"url": "http://localhost:3000/",
+			"webRoot": "${workspaceFolder}/app",
+			"sourceMaps": true,
+			"smartStep": true,
+			"skipFiles": [
+				"<node_internals>/**",
+				"${workspaceFolder}/node_modules/**",
+			]
+		},
+	],
+	"compounds": [
+		{
+			"name": "Debug",
+			"presentation": {
+				"hidden": false,
+				"group": "debug",
+				"order": 1
+			},
+			"configurations": [
+				"Backend",
+				"Frontend"
+			]
+		}
+	]
+}
