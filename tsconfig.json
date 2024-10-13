@@ -1,19 +1,10 @@
 {
-	"include": [
-		"**/*.ts",
-		"**/*.tsx"
-	],
-	"extends": [
-		"@epic-web/config/typescript"
-	],
+	"include": ["**/*.ts", "**/*.tsx"],
+	"extends": ["@epic-web/config/typescript"],
 	"compilerOptions": {
 		"paths": {
-			"#app/*": [
-				"./app/*"
-			],
-			"#tests/*": [
-				"./tests/*"
-			],
+			"#app/*": ["./app/*"],
+			"#tests/*": ["./tests/*"],
 			"@/icon-name": [
 				"./app/ui/components/custom/icons/name.d.ts",
 				"./types/icon-name.d.ts"

@@ -8,9 +8,7 @@
 				"group": "debug",
 				"order": 2
 			},
-			"cascadeTerminateToConfigurations": [
-				"Frontend"
-			],
+			"cascadeTerminateToConfigurations": ["Frontend"],
 			"name": "Backend",
 			"request": "launch",
 			"command": "npm run dev",
@@ -20,8 +18,8 @@
 				"<node_internals>/**",
 				"${workspaceFolder}/node_modules/**",
 				"${workspaceFolder}/build/**",
-				"${workspaceFolder}/server-build/**",
-			],
+				"${workspaceFolder}/server-build/**"
+			]
 		},
 		{
 			"type": "chrome",
@@ -30,20 +28,15 @@
 				"group": "debug",
 				"order": 3
 			},
-			"cascadeTerminateToConfigurations": [
-				"Backend"
-			],
+			"cascadeTerminateToConfigurations": ["Backend"],
 			"name": "Frontend",
 			"request": "launch",
 			"url": "http://localhost:3000/",
 			"webRoot": "${workspaceFolder}/app",
 			"sourceMaps": true,
 			"smartStep": true,
-			"skipFiles": [
-				"<node_internals>/**",
-				"${workspaceFolder}/node_modules/**",
-			]
-		},
+			"skipFiles": ["<node_internals>/**", "${workspaceFolder}/node_modules/**"]
+		}
 	],
 	"compounds": [
 		{
@@ -53,10 +46,7 @@
 				"group": "debug",
 				"order": 1
 			},
-			"configurations": [
-				"Backend",
-				"Frontend"
-			]
+			"configurations": ["Backend", "Frontend"]
 		}
 	]
 }

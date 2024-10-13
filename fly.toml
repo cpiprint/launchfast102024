@@ -1,5 +1,5 @@
-app = "launch-fast-template"
-primary_region = "sjc"
+app = "launchfast102024-4747"
+primary_region = "ewr"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = [ ]
@@ -14,7 +14,7 @@ source = "data"
 destination = "/data"
 
 [[services]]
-internal_port = 8080
+internal_port = 8_080
 processes = [ "app" ]
 protocol = "tcp"
 script_checks = [ ]
@@ -50,8 +50,8 @@ script_checks = [ ]
   headers = { }
 
   [[services.http_checks]]
-    grace_period = "10s"
-    interval = "30s"
-    method = "GET"
-    timeout = "5s"
-    path = "/litefs/health"
+  grace_period = "10s"
+  interval = "30s"
+  method = "GET"
+  timeout = "5s"
+  path = "/litefs/health"

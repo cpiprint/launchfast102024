@@ -14,7 +14,10 @@ import { cn } from '#app/utils/tailwind-merge.ts'
  * @param {React.HTMLAttributes<HTMLDivElement>} [props] - Additional HTML attributes.
  * @returns {JSX.Element} The Container component.
  */
-const Container = forwardRef<HTMLDivElement, PropsWithChildren<HTMLAttributes<HTMLDivElement>>>(({ className, ...props }, ref) => (
+const Container = forwardRef<
+	HTMLDivElement,
+	PropsWithChildren<HTMLAttributes<HTMLDivElement>>
+>(({ className, ...props }, ref) => (
 	<div ref={ref} className={cn('container', className)} {...props} />
 ))
 Container.displayName = 'Container'

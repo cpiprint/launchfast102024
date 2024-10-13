@@ -5,7 +5,10 @@ import { cn } from '#app/utils/tailwind-merge.ts'
 /**
  * An A component.
  */
-const A = forwardRef<HTMLAnchorElement, Omit<LinkProps, 'to'> & { href: string }>(({ href, children, className, ...props }, ref) => (
+const A = forwardRef<
+	HTMLAnchorElement,
+	Omit<LinkProps, 'to'> & { href: string }
+>(({ href, children, className, ...props }, ref) => (
 	<Link to={href} ref={ref} className={cn('a', className)} {...props}>
 		{children}
 	</Link>

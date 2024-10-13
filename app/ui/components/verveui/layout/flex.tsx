@@ -47,7 +47,10 @@ const flexVariants = cva('flex', {
 	},
 })
 
-type FlexProps = { inline?: boolean; wrap?: boolean } & VariantProps<typeof flexVariants> & PropsWithChildren<HTMLAttributes<HTMLDivElement>>
+type FlexProps = { inline?: boolean; wrap?: boolean } & VariantProps<
+	typeof flexVariants
+> &
+	PropsWithChildren<HTMLAttributes<HTMLDivElement>>
 
 /**
  * Flex component for creating unidimensional layouts.
@@ -72,9 +75,34 @@ type FlexProps = { inline?: boolean; wrap?: boolean } & VariantProps<typeof flex
  * @param {React.HTMLAttributes<HTMLDivElement>} [props] - Additional HTML attributes.
  * @returns {JSX.Element} The Flex component.
  */
-const Flex = forwardRef<HTMLDivElement, FlexProps>(({ inline = false, wrap = false, orientation = 'horizontal', justify, items, gap = '0', className, ...props }, ref) => {
-	return <div ref={ref} className={cn(flexVariants({ orientation, items, justify, gap }), inline ? `inline-flex` : ``, wrap ? `flex-wrap` : ``, className)} {...props} />
-})
+const Flex = forwardRef<HTMLDivElement, FlexProps>(
+	(
+		{
+			inline = false,
+			wrap = false,
+			orientation = 'horizontal',
+			justify,
+			items,
+			gap = '0',
+			className,
+			...props
+		},
+		ref,
+	) => {
+		return (
+			<div
+				ref={ref}
+				className={cn(
+					flexVariants({ orientation, items, justify, gap }),
+					inline ? `inline-flex` : ``,
+					wrap ? `flex-wrap` : ``,
+					className,
+				)}
+				{...props}
+			/>
+		)
+	},
+)
 Flex.displayName = 'Flex'
 
 export { Flex }

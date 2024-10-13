@@ -16,5 +16,6 @@
 This starts your app in development mode, rebuilding assets on file changes.
 
 The development database is seeded with an admin user:
+
 - Email: `admin@example.com`
 - Password: `youareawesome`

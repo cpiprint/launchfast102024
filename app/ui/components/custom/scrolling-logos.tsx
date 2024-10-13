@@ -11,23 +11,23 @@ const ScrollingLogos = ({
 }) => {
 	return (
 		<div className={cn('group flex overflow-hidden', className)} {...props}>
-			<div className="animate-loop-scroll flex space-x-10 group-hover:paused">
+			<div className="flex animate-loop-scroll space-x-10 group-hover:paused">
 				{children}
 			</div>
 			<div
-				className="animate-loop-scroll flex space-x-10 group-hover:paused"
+				className="flex animate-loop-scroll space-x-10 group-hover:paused"
 				aria-hidden="true"
 			>
 				{children}
 			</div>
 			<div
-				className="animate-loop-scroll flex space-x-10 group-hover:paused"
+				className="flex animate-loop-scroll space-x-10 group-hover:paused"
 				aria-hidden="true"
 			>
 				{children}
 			</div>
 			<div
-				className="animate-loop-scroll flex space-x-10 group-hover:paused"
+				className="flex animate-loop-scroll space-x-10 group-hover:paused"
 				aria-hidden="true"
 			>
 				{children}

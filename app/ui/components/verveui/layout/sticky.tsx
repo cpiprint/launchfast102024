@@ -24,7 +24,10 @@ import { cn } from '#app/utils/tailwind-merge.ts'
  * @param {React.HTMLAttributes<HTMLDivElement>} [props] - Additional HTML attributes.
  * @returns {JSX.Element} The Sticky component.
  */
-const Sticky = forwardRef<HTMLDivElement, PropsWithChildren<HTMLAttributes<HTMLDivElement>>>(({ className, ...props }, ref) => {
+const Sticky = forwardRef<
+	HTMLDivElement,
+	PropsWithChildren<HTMLAttributes<HTMLDivElement>>
+>(({ className, ...props }, ref) => {
 	return <div ref={ref} className={cn('sticky', className)} {...props} />
 })
 Sticky.displayName = 'Sticky'

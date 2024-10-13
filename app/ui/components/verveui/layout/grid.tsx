@@ -101,19 +101,43 @@ type GridProps = PropsWithChildren<HTMLAttributes<HTMLDivElement>> &
  * @param {React.HTMLAttributes<HTMLDivElement>} [props] - Additional HTML attributes.
  * @returns {JSX.Element} The Grid component.
  */
-const Grid = forwardRef<HTMLDivElement, GridProps>(({ inline = false, cols, rows, flow = 'row', justify = 'start', align = 'start', gapX = '0', gapY = '0', className, ...props }, ref) => {
-	return (
-		<div
-			ref={ref}
-			className={cn(gridVariants({ flow, justify, align, gapX, gapY }), inline ? `inline-grid` : ``, className)}
-			style={{
-				gridTemplateColumns: cols ? `repeat(${cols}, minmax(0, 1fr))` : undefined,
-				gridTemplateRows: rows ? `repeat(${rows}, minmax(0, 1fr))` : undefined,
-			}}
-			{...props}
-		/>
-	)
-})
+const Grid = forwardRef<HTMLDivElement, GridProps>(
+	(
+		{
+			inline = false,
+			cols,
+			rows,
+			flow = 'row',
+			justify = 'start',
+			align = 'start',
+			gapX = '0',
+			gapY = '0',
+			className,
+			...props
+		},
+		ref,
+	) => {
+		return (
+			<div
+				ref={ref}
+				className={cn(
+					gridVariants({ flow, justify, align, gapX, gapY }),
+					inline ? `inline-grid` : ``,
+					className,
+				)}
+				style={{
+					gridTemplateColumns: cols
+						? `repeat(${cols}, minmax(0, 1fr))`
+						: undefined,
+					gridTemplateRows: rows
+						? `repeat(${rows}, minmax(0, 1fr))`
+						: undefined,
+				}}
+				{...props}
+			/>
+		)
+	},
+)
 Grid.displayName = 'Grid'
 
 export { Grid }
